@@ -18,10 +18,12 @@
   </nav>
 
   <div class="container">
+    <!-- Formulario de creación/edición -->
     <div class="card mb-4 shadow-sm border-warning">
       <div class="card-body">
-        <h5 class="card-title text-warning">Crear Usuario</h5>
+        <h5 class="card-title text-warning">Crear / Editar Usuario</h5>
         <form id="userForm" class="row g-3">
+          <input type="hidden" id="userId">
           <div class="col-md-6">
             <label for="name" class="form-label">Nombre</label>
             <input type="text" class="form-control" id="name" placeholder="Nombre" required>
@@ -38,15 +40,17 @@
             <label for="comments" class="form-label">Comentarios</label>
             <input type="text" class="form-control" id="comments" placeholder="Comentarios adicionales">
           </div>
-          <div class="col-12">
-            <button type="submit" class="btn btn-warning">Enviar</button>
-            <button type="button" id="loadUsersBtn" class="btn btn-info">Cargar Usuarios</button>
+          <div class="col-12 text-end">
+            <button type="submit" class="btn btn-warning" id="saveBtn">Enviar</button>
+            <button type="button" class="btn btn-secondary" id="cancelEditBtn" style="display:none;">Cancelar</button>
+            <button type="button" id="loadUsersBtn" class="btn btn-info ms-2">Cargar Usuarios</button>
           </div>
         </form>
         <div id="resultMessage" class="mt-3"></div>
       </div>
     </div>
 
+    <!-- Tabla de usuarios -->
     <div class="card shadow-sm border-danger">
       <div class="card-body">
         <h5 class="card-title text-danger">Listado de Usuarios</h5>
@@ -59,6 +63,7 @@
               <th>Edad</th>
               <th>Comentarios</th>
               <th>Creado</th>
+              <th>Acciones</th>
             </tr>
           </thead>
           <tbody>
