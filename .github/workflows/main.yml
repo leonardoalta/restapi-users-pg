@@ -1,4 +1,4 @@
-name: Build & Push Docker Image (Users-PG)
+name: Build & Pushh Docker Image (Users-PG)
 
 on: [ push ]
 
